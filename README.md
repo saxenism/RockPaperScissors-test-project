@@ -42,13 +42,22 @@ There are many ways to implement this, so we leave that up to you.
 
 
 Feel free to use this smart contract anywhere you like.
+You know, this smart contract is fairly well documented. Hopefully, you won't much problem understanding the logic.
+
 Also, remember you can always [show me your support](paypal.me/saxenism).
 
 ## Strech Goals implemented:
 
-* Make it a utility whereby any 2 people can decide to play against each other. :heavy_check_mark:
+* Make it a utility whereby any 2 people can decide to play against each other. :heavy_check_mark
+  * As long as players *agree* on a particular bid amount, anyone can play anyone.
 * Reduce gas costs as much as possible. ✔️
+  * Kept events to a minimum. 
+  * Avoided writing to the chain much
+  * Used `require` instead of `assert`.
+  * Used `external` wherever I could instead of using `public` everywhere
+  * Avoided complex on-chain computations. 
 * Let players bet their previous winnings. ✔️
+  * An on-chain wallet is maintained. All transactions take place from there. You can definitely bet your previous winnings that get added to your wallet.
 * How can you entice players to play, knowing that they may have their funds stuck in the contract if they face an uncooperative player? ✔️
   * My entire contract design is trustless. There is no way a malicious player can withold funds or do any foul-play.
 * Include any tests using Hardhat. ℹ️
